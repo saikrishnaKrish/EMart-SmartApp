@@ -8,13 +8,14 @@ const ProfilePage = () => {
   const {userDetails,handleLogout } = useAuthContext();
 
   const navigate = useNavigate();  
+
   useEffect(()=>{
   
-  if(Object.keys(userDetails).length == 0){
-       navigate("/signonportal")
-    }
-  },[userDetails])
-
+    if(Object.keys(userDetails).length == 0){
+         navigate("/signonportal")
+      }
+    },[userDetails])
+  
     const { email, name, role } = userDetails||{};
 
 
