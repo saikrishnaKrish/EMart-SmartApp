@@ -14,7 +14,7 @@ const ProfilePage = () => {
     if(Object.keys(userDetails).length == 0){
          navigate("/signonportal")
       }
-    },[userDetails])
+    },[userDetails,navigate])
   
     const { email, name, role } = userDetails||{};
 
