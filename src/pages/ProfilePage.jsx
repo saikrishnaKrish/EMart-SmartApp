@@ -10,7 +10,7 @@ const ProfilePage = () => {
   const navigate = useNavigate();  
   useEffect(()=>{
   
-  if(userDetails == null){
+  if(Object.keys(userDetails).length == 0){
        navigate("/signonportal")
     }
   },[userDetails])
