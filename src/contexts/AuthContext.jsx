@@ -8,10 +8,16 @@ const AuthProvider = ({children})=>{
     const [userDetails,setUserDetails ] =useState({});
 
     const handleLogout = ()=>{
-        let allCookies = document.cookie;
-        console.log(allCookies)
-        setUserDetails({})
-    }
+         setUserDetails({})
+         localStorage.removeItem('userDetails');
+
+         // Clear cookies
+         document.cookie.split(";").forEach((c) => {
+           document.cookie = c
+             .replace(/^ +/, "")
+             .replace(/=.*/, `=;expires=${new Date().toUTCString()};path=/`)
+    })
+}
 
     return <AuthContext.Provider  value={{userDetails,setUserDetails,handleLogout}}>
             {children}
@@ -21,4 +27,4 @@ const AuthProvider = ({children})=>{
 export const useAuthContext = ()=>{
     return useContext(AuthContext)
 }
-export default AuthProvider
+export default AuthProvider;

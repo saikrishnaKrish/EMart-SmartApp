@@ -75,14 +75,16 @@ const Home = () => {
           )}
         </div>
       </header>
-
+     
       <main
         className="product_wrapper"
         style={
+       
           theme === "dark"
             ? { backgroundColor: "#f2f2f2" }
             : { backgroundColor: "#f2dea8" }
         }
+        
       >
         {pData?.length > 0 && cData?.length > 0 && (
           <ProductList productList={filteredSortedgroupByArr} />

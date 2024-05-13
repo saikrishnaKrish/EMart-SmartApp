@@ -40,7 +40,7 @@ const NavBar = () => {
       </NavLink>
       {/* <NavLink style={activeState} to="/hooks">HooksExample</NavLink>   */}
       {/* <NavLink style={activeState} to={"/user"} >Users</NavLink>  */}
-      {Object.keys(userDetails).length > 0 && (
+      {userDetails && Object?.keys(userDetails).length > 0 && (
         <>
        
           <NavLink style={activeState} to={"/cart"}>

@@ -5,9 +5,11 @@ const RequireAuth = () => {
 
     const { userDetails} = useAuthContext();
     const location = useLocation();
+  
+    const isAuthenticated= userDetails.authToken;
 
   return (
-    Object.keys(userDetails).length > 0  ? <Outlet/> : 
+    isAuthenticated ? <Outlet/> : 
     <Navigate to="/signonportal" state={{ from: location }} replace/>
   )
 }

@@ -1,74 +1,98 @@
 import { useState } from "react";
 import axios from "axios";
 import url from "../urlConfig";
-import {useAuthContext} from '../contexts/AuthContext'
+import { useAuthContext } from "../contexts/AuthContext";
 import { Navigate, useNavigate } from "react-router-dom";
 import urlConfig from "../urlConfig";
+import { Alert } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 const LoginPage = ({ handleTabChange }) => {
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
-    enableBtn:true,
+    enableBtn: true,
   });
+
+  const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setLoginInfo((info) => ({ ...info, [name]: value }));
-    
-    if(loginInfo.email.trim()!="" && loginInfo.password.trim()!=""){
-      setLoginInfo((info)=>({...info,enableBtn:false}))
+
+    if (loginInfo.email.trim() != "" && loginInfo.password.trim() != "") {
+      setLoginInfo((info) => ({ ...info, enableBtn: false }));
     }
   };
-  const {userDetails,setUserDetails} = useAuthContext();
+
+  const { userDetails, setUserDetails } = useAuthContext();
+
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-
-
-
-
-
-
-    try{
+    try {
       const data = await fetch(urlConfig.LOGIN_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(loginInfo),
-        credentials: 'include'
+        credentials: "include",
       });
       const user = await data.json();
-      
-      if(user.status=="success"){
-      setUserDetails(user.user)
-      navigate("/")
+      setUserDetails(user.user);
+      setError(null);
+      if (user.status == "success") {
+        navigate("/");
+      } else {
+        throw new Error(user.message);
       }
-      else{
-       throw new Error(user.message)
-      }  
-      console.log(user);
-    }catch(err){
+    } catch (err) {
       console.log(err);
+      console.log(userDetails);
+      setError(err.message);
     }
   };
 
+  // Check if userDetails is available before accessing its properties
+  //  if (!userDetails) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <div className="main-container">
+      {JSON.stringify(userDetails, error)}
+      {error && <Alert severity="error" variant="filled" >{error}</Alert>}
       <h4 className="login-label">Enter your cridentials</h4>
       <form className="login-form">
         <fieldset>
-          <label>Email<span className="required-field">*</span></label>
-          <input type="email" name="email" required onChange={handleInputChange} />
+          <label>
+            Email<span className="required-field">*</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            onChange={handleInputChange}
+          />
         </fieldset>
         <fieldset>
-          <label>password<span className="required-field">*</span></label>
-          <input type="password" name="password" required onChange={handleInputChange} />
+          <label>
+            password<span className="required-field">*</span>
+          </label>
+          <input
+            type="password"
+            name="password"
+            required
+            onChange={handleInputChange}
+          />
         </fieldset>
       </form>
 
-      <button className="login-btn" onClick={handleLogin}
+      <button
+        className="login-btn"
+        onClick={handleLogin}
         disabled={loginInfo.enableBtn}
       >
         {" "}

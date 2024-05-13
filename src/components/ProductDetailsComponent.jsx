@@ -33,7 +33,7 @@ const ProductDetailsComponent = () => {
                     ></RatingComponent> */}
                     {/* <AddToCart/> */}
                     <br/>
-                    <button onClick={()=>navigate("/ecomm/home")}>Back To Home</button>
+                    <button onClick={()=>navigate("/")}>Back To Home</button>
                 </span>
             </>
         }

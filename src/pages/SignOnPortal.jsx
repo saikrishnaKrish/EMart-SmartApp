@@ -5,7 +5,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import LoginPage from './LoginPage';
-import SignInPage from './SignInPage';
+import SignUpPage from './SignUpPage';
 import './styles/singonstyles.scss'
 
 
@@ -35,7 +35,7 @@ const SignOnPortal = () => {
           <LoginPage handleTabChange={handleTabChange}/>
         </TabPanel>
         <TabPanel value="2">
-            <SignInPage handleTabChange={handleTabChange}/>
+            <SignUpPage handleTabChange={handleTabChange}/>
         </TabPanel>
       </TabContext>
     </Box>

@@ -3,6 +3,7 @@ import HomeComponent from './Home';
 import { ErrorBoundary } from "react-error-boundary";
 import { Provider } from "react-redux";
 import store from "./Store/Store";
+import './dashboard-styles.css';
 import PaginationProvider from './contexts/usePaginationContext';
 
 export const DashboardCompoent = () => {
@@ -19,7 +20,7 @@ export const DashboardCompoent = () => {
         }
 
   return (
-    <div>
+    <div className='dashboard-main'>
     <ErrorBoundary fallbackRender={fallbackRender}>
     {/* <BrowserRouter> */}
   
