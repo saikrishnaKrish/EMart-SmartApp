@@ -62,9 +62,13 @@ const LoginPage = ({ handleTabChange }) => {
 
   return (
     <div className="main-container">
-      {JSON.stringify(userDetails, error)}
-      {error && <Alert severity="error" variant="filled" >{error}</Alert>}
-      <h4 className="login-label">Enter your cridentials</h4>
+      {error && (
+        <Alert severity="error" variant="filled">
+          {error}
+        </Alert>
+      )}
+      <br />
+      <h4 className="login-label">Enter your valid cridentials</h4>
       <form className="login-form">
         <fieldset>
           <label>

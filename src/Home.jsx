@@ -30,7 +30,7 @@ const Home = () => {
 
   if (pData) {
     productList = pData.map((product) => ({
-      id: product.id,
+      id: product._id,
       title: product.title,
       image: product.image,
       ...product

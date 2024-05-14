@@ -1,0 +1,17 @@
+.cart-container {
+    .cart-billed-qty{
+
+        display: flex;
+    }
+    
+    .cart-total{
+        margin: 20px;
+        .MuiTable-root {
+            background: antiquewhite;
+            th.MuiTableCell-root.MuiTableCell-head.MuiTableCell-sizeMedium.css-1ygcj2i-MuiTableCell-root {
+                font-size: larger;
+            }
+        }
+        // overflow-x: hidden;
+    }
+}

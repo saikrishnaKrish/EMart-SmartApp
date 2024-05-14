@@ -13,7 +13,7 @@ import AuthProvider from './contexts/AuthContext';
 import NavBar from './NavBar/NavBar.jsx';
 import Logout from "./pages/LogoutPage";
 import RequireAuth from './components/RequireAuth.jsx';
-
+import CheckoutComponent from './components/checkoutComponent.jsx'
 
 
 const AppRoutes = () => {
@@ -53,6 +53,8 @@ const AppRoutes = () => {
                     <Route path="profile" element={<ProfilePage />} />
                     {/* <Route path="/hooks" element={<HooksExample/>}/> */}
                     <Route path="product/:id" element={<ProductDetailsComponent />} />
+                    <Route path="checkout" element={<CheckoutComponent />} />
+                   
                     <Route path="logout" element={<Logout/>} />
                     {/* <Route path = "/product/:id" element = {<ProductDetails></ProductDetails>}> </Route> */}
                     {/* <ReduxWithThunkExample/> */}

@@ -9,7 +9,10 @@ const cartSlice = createSlice({
     reducers:{
             addToCart:(state,action)=>{
                     state.cartQuantity++;
+                    console.log("cart products")
                     console.log(state.cartProducts)
+                    console.log(action)
+                    console.log(action.payload)
                     const productToBeAdded =action.payload;
                     console.log(productToBeAdded.id)
                     const requiredProduct = state.cartProducts.find((pid)=>productToBeAdded.id==pid.id)

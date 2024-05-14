@@ -29,7 +29,8 @@ const ProductList = ({ productList }) => {
   const { cartProducts } = useSelector(store => store.cartReducer);
 
   const handleAddProduct = (product) => {
- 
+      console.log("adding product to cart")
+      console.log(product)
     dispatch(addToCart(product));
   };
 
@@ -62,3 +63,7 @@ const ProductList = ({ productList }) => {
 };
 
 export default ProductList;
+
+
+
+
