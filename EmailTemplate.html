@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+          .email-container{
+            border: 10px solid #f1fbff;
+            padding: 5px;
+        
+            .cancel-email-btn{
+                background-color: #d9232d;
+                color: white;
+                padding: 5px 10px;
+            }
+            .email-btn{
+                background-color: #224383;
+                color: white;
+                padding: 5px 10px;
+                margin: 5px 50px;
+            }
+            table.email-contents {
+    width: 100%;
+}
+            td.email-label {
+                width: 10%;
+            }
+        td.email-input {
+        width: 80%;
+            }
+        td.email-input > input[type="text"] {
+            width: 80%;
+            padding: 5px;
+            border-color: #e2e2e2;
+        }
+        .email-body-banner{
+            
+    background: #d4f4ff;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    padding: 10px 10px;
+    }
+    
+}
+    </style>
+</head>
+<body>  
+  <div class="email-container">
+        <div class="email-actions">
+                <button class="email-btn">Send Mail</button>
+                <button class="cancel-email-btn">Cancel</button>
+                <button class="email-btn">Demande De Devis</button>
+        </div>
+        <div class="email-template">
+            <table class="email-contents">
+                <tbody class="email-body">
+                    <tr>
+                        <td class="email-label">
+                            From:
+                        </td>
+                        <td class="email-input">
+                            <input type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="email-label"> 
+                            To:
+                        </td>
+                        <td class="email-input">
+                            <input type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="email-label">
+                            Subject:
+                        </td>
+                        <td class="email-input">
+                            <input type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="email-label">
+                            Remarks:
+                        </td>
+                        <td class="email-input">
+                            <input type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="email-label"> 
+                            Body:
+                        </td>
+                        <td class="email-body-banner"> 
+                            BON DE COMMANDE 
+                        </td>
+                    </tr>
+                    <tr class="email-input">
+                        <td>
+                            <div class="email-body row">
+                                 <div class="email-logo column">
+                                              LOGO          
+                                 </div>
+                            </div>
+                        </td>                  
+                        <td>
+                            <div class="email-body row">
+                                 <div class="email-details column">
+                                    <div class="email-body">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Order Number:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Order Date:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr><tr>
+                                                    <td>Date de livrasion:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr><tr>
+                                                    <td>Le mode de Paiement:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr><tr>
+                                                    <td>Chantier:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr><tr>
+                                                    <td>Personne responsable:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr><tr>
+                                                    <td>Addresse Livraison:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr><tr>
+                                                    <td>Remarque:</td>
+                                                    <td>         <input type="text"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                 </div>
+                            </div>
+                        </td></tr>
+                </tbody>
+
+            </table>
+
+        </div>
+  </div>      
+    
+</body>
+</html>
