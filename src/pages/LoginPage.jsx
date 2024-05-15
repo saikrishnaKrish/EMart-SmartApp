@@ -44,6 +44,7 @@ const LoginPage = ({ handleTabChange }) => {
       setUserDetails(user.user);
       setError(null);
       if (user.status == "success") {
+        alert(user.message);
         navigate("/");
       } else {
         throw new Error(user.message);

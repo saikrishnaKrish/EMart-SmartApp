@@ -40,7 +40,8 @@ const SignUpPage = ({ handleTabChange }) => {
       setInfo(info);
       setError(null);
       if (info.status === "success") {
-        alert("You have been registered successfully!!! please login!")
+        // alert("You have been registered successfully!!! please login!")
+        alert(info.message)
         setRegistrationData(initialData);
         handleTabChange(null, "1");
       } else {
