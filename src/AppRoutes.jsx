@@ -13,7 +13,7 @@ import AuthProvider from './contexts/AuthContext';
 import NavBar from './NavBar/NavBar.jsx';
 import Logout from "./pages/LogoutPage";
 import RequireAuth from './components/RequireAuth.jsx';
-import CheckoutComponent from './components/checkoutComponent.jsx';
+import CheckoutComponent from './components/CheckoutComponent.jsx';
 
 
 
