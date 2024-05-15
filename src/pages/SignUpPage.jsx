@@ -1,5 +1,6 @@
 import { useState } from "react";
 import urlConfig from "../urlConfig";
+import { Alert } from "@mui/material";
 
 const SignUpPage = ({ handleTabChange }) => {
   const initialData = {
@@ -13,6 +14,7 @@ const SignUpPage = ({ handleTabChange }) => {
 
   const [registrationData, setRegistrationData] = useState(initialData);
   const [info, setInfo] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,21 +37,29 @@ const SignUpPage = ({ handleTabChange }) => {
         credentials: "include",
       });
       const info = await data.json();
+      setInfo(info);
+      setError(null);
       if (info.status === "success") {
-        setInfo(info);
         alert("You have been registered successfully!!! please login!")
+        setRegistrationData(initialData);
         handleTabChange(null, "1");
       } else {
-        setInfo(info);
-        setRegistrationData(initialData);
+        // alert(info.message)
+        throw new Error(info.message);
       }
     } catch (err) {
-      alert(err.message);
+      setError(err.message);
     }
   };
   
   return (
     <div className="main-container">
+      {error && (
+        <Alert severity="error" variant="filled">
+          {error}
+        </Alert>
+      )}
+      <br />
       <h4 className="signup-label">Register with Us !!!</h4>
       <form className="signup-form">
         <fieldset>
