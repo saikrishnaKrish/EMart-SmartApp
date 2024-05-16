@@ -1,12 +1,9 @@
 import { useState } from "react";
-import axios from "axios";
-import url from "../urlConfig";
 import { useAuthContext } from "../contexts/AuthContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import urlConfig from "../urlConfig";
 import { Alert } from "@mui/material";
-import CheckIcon from "@mui/icons-material/Check";
-import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+
 
 const LoginPage = ({ handleTabChange }) => {
   const [loginInfo, setLoginInfo] = useState({
@@ -44,7 +41,7 @@ const LoginPage = ({ handleTabChange }) => {
       setUserDetails(user.user);
       setError(null);
       if (user.status == "success") {
-        alert(user.message);
+        alert("loggedin successfully !!!");
         navigate("/");
       } else {
         throw new Error(user.message);
