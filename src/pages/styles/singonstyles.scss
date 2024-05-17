@@ -63,8 +63,19 @@ fieldset {
     
     }
 
-    @media screen and (max-width:480px) {
+    @media screen and (max-width:599px) {
         width: 90%;
+    }
+
+    @media screen and (min-width:600px ) and (max-width:768px) {
+        width: 80%;
+    }
+
+    @media screen and (min-width:768px ) and (max-width:1024px) {
+        width: 70%;
+    }
+    @media screen and (min-width:1024px ) and (max-width:1280px) {
+        width: 60%;
     }
 }
 
